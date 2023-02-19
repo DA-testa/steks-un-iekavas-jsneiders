@@ -26,11 +26,21 @@ def find_mismatch(text):
         
 
 def main():
-    text = input()
-    mismatch = find_mismatch(text)
-    # Printing answer, write your code here
-    print(mismatch)
-    exit()#.
+    user_input = input("Enter I or F")
+    if "F" in user_input:
+        file_path = input("Enter file path")
+        with open(file_path, "r") as f:
+            text = f.read()
+            mismatch = find_mismatch(text)
+            print(mismatch)
+            exit()
+    elif "I" in user_input:
+        text = input()
+        mismatch = find_mismatch(text)
+        print(mismatch)
+        exit()
+    else:
+        print("Invalid input")
 
 if __name__ == "__main__":
     main()
